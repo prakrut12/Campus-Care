@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusCare Helpdesk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="brand-mark">C</span>
+        <div>
+          <strong>CampusCare</strong>
+          <small>College Helpdesk</small>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav"></nav>
+
+      <div class="sidebar-card">
+        <small>Signed in as</small>
+        <strong id="sidebarUser">Guest</strong>
+        <span id="sidebarRole">Please login</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <div>
+          <p class="eyebrow" id="pageEyebrow">Welcome</p>
+          <h1 id="pageTitle">CampusCare Helpdesk</h1>
+        </div>
+        <button class="ghost hidden" id="logoutBtn">Logout</button>
+      </header>
+
+      <section id="toast" class="toast hidden" role="status"></section>
+      <section id="view" class="view"></section>
+    </main>
+  </div>
+
+  <template id="authTemplate">
+    <div class="auth-layout">
+      <section class="auth-panel">
+        <div class="auth-copy">
+          <span class="pill">Fast campus support</span>
+          <h2>Resolve student issues without the paper chase.</h2>
+          <p>CampusCare handles ticket submission, status updates, filtering, role based dashboards, and simple analytics using browser local storage.</p>
+        </div>
+        <div class="demo-box">
+          <strong>Demo accounts</strong>
+          <span>Admin: admin@campuscare.edu / admin123</span>
+          <span>Student: riya@campuscare.edu / student123</span>
+        </div>
+      </section>
+
+      <section class="form-panel">
+        <div class="tabs">
+          <button class="tab active" data-auth-tab="login">Login</button>
+          <button class="tab" data-auth-tab="register">Register</button>
+        </div>
+        <form id="loginForm" class="form">
+          <label>Email<input type="email" name="email" required placeholder="you@college.edu"></label>
+          <label>Password<input type="password" name="password" required placeholder="Enter password"></label>
+          <button class="primary" type="submit">Login</button>
+        </form>
+        <form id="registerForm" class="form hidden">
+          <label>Full name<input type="text" name="name" required placeholder="Your name"></label>
+          <label>Email<input type="email" name="email" required placeholder="you@college.edu"></label>
+          <label>Password<input type="password" name="password" required minlength="6" placeholder="Minimum 6 characters"></label>
+          <label>Role
+            <select name="role">
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
+            </select>
+          </label>
+          <button class="primary" type="submit">Create account</button>
+        </form>
+      </section>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
